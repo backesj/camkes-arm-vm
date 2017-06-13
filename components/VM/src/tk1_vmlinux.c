@@ -409,6 +409,7 @@ install_linux_devices(vm_t* vm)
         err = vm_install_passthrough_device(vm, linux_pt_devices[i]);
         assert(!err);
     }
+    err = vm_add_device(vm, &dev_uxas_waypoint);
 
     /* Install ram backed devices */
     /* Devices that are just anonymous memory mappings */
