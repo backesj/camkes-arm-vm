@@ -10,7 +10,7 @@
 
 choice
     bool "boot mode selection"
-    depends on APP_CAMKES_VM && PLAT_TK1
+    depends on (APP_CAMKES_VM || APP_SOI_TK1) && PLAT_TK1
     default VM_TK1_INITRD
     help
         Selects whether to load root file system off emmc or ramdisk
@@ -30,7 +30,7 @@ endchoice
 
 config TK1_DEVICE_FWD
     bool "Forward VM access to UART and Clock and reset controller"
-    depends on APP_CAMKES_VM && PLAT_TK1
+    depends on (APP_CAMKES_VM || APP_SOI_TK1) && PLAT_TK1
     default n
     help
         When using the VM with other components that need access to the UART and clock and reset controller
@@ -38,7 +38,7 @@ config TK1_DEVICE_FWD
 
 config TK1_INSECURE
     bool "Insecure: Give all devices to VM component"
-    depends on APP_CAMKES_VM && PLAT_TK1
+    depends on (APP_CAMKES_VM || APP_SOI_TK1) && PLAT_TK1
     default n
     help
         The option when disabled only passes through UARTD, USB, EMMC, VGIC and a Clock and reset controller

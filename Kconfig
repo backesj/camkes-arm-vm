@@ -47,6 +47,7 @@ menu "Applications"
     source "apps/capdl-loader-experimental/Kconfig"
     source "apps/vm/Kconfig"
     source "apps/soi_tk1/Kconfig"
+    source "apps/smaccmpilot-tk1/Kconfig"
 
 endmenu
 
